@@ -3,10 +3,8 @@ package ru.specialist.draw;
 import ru.specialist.draw.model.GraphObjectPrototypeRegistry;
 import ru.specialist.draw.model.SceneBuilder;
 import ru.specialist.draw.model.factories.BWGraphObjectFactory;
-import ru.specialist.draw.model.factories.ColourGraphObjectFactory;
 import ru.specialist.draw.model.Scene;
 
-import java.sql.SQLOutput;
 
 public class Main {
 
