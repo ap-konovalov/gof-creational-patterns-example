@@ -1,17 +1,12 @@
 package ru.specialist.draw.model.objects;
 
-public abstract class GraphObject implements Cloneable {
+public interface GraphObject<T> {
 
-    protected static final String DEFAULT_COLOUR = "black";
+    String DEFAULT_COLOUR = "black";
 
-    public abstract void draw();
+    void draw();
 
-    @Override
-    public GraphObject clone() {
-        try {
-            return (GraphObject) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    T clone();
+
+    void setColour(String colour);
 }

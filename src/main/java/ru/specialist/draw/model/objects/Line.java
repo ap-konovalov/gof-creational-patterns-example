@@ -2,10 +2,10 @@ package ru.specialist.draw.model.objects;
 
 import java.util.Objects;
 
-public class Line extends GraphObject implements Cloneable {
+public class Line implements Cloneable, GraphObject {
 
-    private Point start;
-    private Point end;
+    private final Point start;
+    private final Point end;
     private String colour;
 
     public void setColour(String colour) {

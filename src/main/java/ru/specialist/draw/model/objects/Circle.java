@@ -2,12 +2,13 @@ package ru.specialist.draw.model.objects;
 
 import java.util.Objects;
 
-public class Circle extends GraphObject implements Cloneable {
+public class Circle   implements Cloneable, GraphObject {
 
-    private Point center;
-    private int radius;
+    private final Point center;
+    private final int radius;
     private String colour;
 
+    @Override
     public void setColour(String colour) {
         this.colour = colour;
     }

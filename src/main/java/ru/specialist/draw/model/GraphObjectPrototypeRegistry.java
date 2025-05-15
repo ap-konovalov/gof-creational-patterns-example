@@ -22,7 +22,7 @@ public class GraphObjectPrototypeRegistry {
         if (graphObject == null) {
             throw new IllegalArgumentException("Фигура не найдена");
         }
-        return graphObject.clone();
+        return (GraphObject) graphObject.clone();
     }
 
     public static GraphObjectPrototypeRegistry initPrototypes() {

@@ -2,10 +2,10 @@ package ru.specialist.draw.model.objects;
 
 import java.util.Objects;
 
-public class Point extends GraphObject implements Cloneable {
+public class Point implements Cloneable, GraphObject {
 
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
     private String color;
 
     public Point(int x, int y) {
@@ -24,7 +24,7 @@ public class Point extends GraphObject implements Cloneable {
 
     @Override
     public void draw() {
-        System.out.println(toString() + String.format(", colour = %s", color));
+        System.out.println(this + String.format(", colour = %s", color));
     }
 
     @Override

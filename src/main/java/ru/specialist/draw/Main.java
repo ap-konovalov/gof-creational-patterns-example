@@ -22,6 +22,7 @@ public class Main {
         System.out.println("########### Factory ###########");
         BWGraphObjectFactory bwGraphObjectFactory = new BWGraphObjectFactory();
         scene.add(bwGraphObjectFactory.createPoint());
+        scene.add(bwGraphObjectFactory.createTriangle());
         scene.draw();
         scene.reset();
 
