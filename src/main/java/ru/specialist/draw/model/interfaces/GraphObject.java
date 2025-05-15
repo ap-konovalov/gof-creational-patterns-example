@@ -1,4 +1,4 @@
-package ru.specialist.draw.model.objects;
+package ru.specialist.draw.model.interfaces;
 
 public interface GraphObject<T> {
 

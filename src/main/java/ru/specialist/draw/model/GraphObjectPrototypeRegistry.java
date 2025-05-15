@@ -1,7 +1,7 @@
 package ru.specialist.draw.model;
 
 import ru.specialist.draw.model.objects.Circle;
-import ru.specialist.draw.model.objects.GraphObject;
+import ru.specialist.draw.model.interfaces.GraphObject;
 import ru.specialist.draw.model.objects.Line;
 import ru.specialist.draw.model.objects.Point;
 

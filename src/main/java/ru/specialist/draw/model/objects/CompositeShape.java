@@ -1,12 +1,13 @@
 package ru.specialist.draw.model.objects;
 
+import ru.specialist.draw.model.interfaces.GraphObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CompositeShape implements GraphObject {
 
-    private List<GraphObject> children = new ArrayList<>();
-    ;
+    private final List<GraphObject> children = new ArrayList<>();
 
     public List<GraphObject> getChildren() {
         return children;
@@ -23,7 +24,7 @@ public class CompositeShape implements GraphObject {
 
     @Override
     public void draw() {
-        children.stream().peek(o -> o.draw());
+        children.stream().peek(GraphObject::draw);
     }
 
     @Override

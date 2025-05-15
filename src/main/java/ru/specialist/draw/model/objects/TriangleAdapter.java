@@ -1,5 +1,7 @@
 package ru.specialist.draw.model.objects;
 
+import ru.specialist.draw.model.interfaces.GraphObject;
+
 public class TriangleAdapter implements GraphObject {
 
     private final Triangle triangle;

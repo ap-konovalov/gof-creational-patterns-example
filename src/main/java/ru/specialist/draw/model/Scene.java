@@ -1,11 +1,11 @@
 package ru.specialist.draw.model;
 
-import ru.specialist.draw.model.objects.GraphObject;
-
+import ru.specialist.draw.model.interfaces.GraphObject;
 import java.util.HashSet;
 import java.util.Set;
 
 // Singleton pattern
+// Facade pattern
 public class Scene {
 
     private static Set<GraphObject> graphObjects;
@@ -35,6 +35,6 @@ public class Scene {
     }
 
     public void draw() {
-        graphObjects.stream().forEach(o -> o.draw());
+        graphObjects.forEach(GraphObject::draw);
     }
 }

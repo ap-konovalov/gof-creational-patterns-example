@@ -1,5 +1,7 @@
 package ru.specialist.draw.model.objects;
 
+import ru.specialist.draw.model.interfaces.GraphObject;
+
 import java.util.Objects;
 
 public class Point implements Cloneable, GraphObject {
