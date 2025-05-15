@@ -21,7 +21,7 @@ public class TriangleAdapter implements GraphObject {
 
     @Override
     public void draw() {
-        System.out.println("Triangle drawn: " + triangle.getCoordinates());
+        System.out.println("Draw triangle " + triangle.getCoordinates() + " colour = " + colour);
     }
 
     @Override

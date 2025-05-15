@@ -4,6 +4,7 @@ import ru.specialist.draw.model.GraphObjectPrototypeRegistry;
 import ru.specialist.draw.model.SceneBuilder;
 import ru.specialist.draw.model.factories.BWGraphObjectFactory;
 import ru.specialist.draw.model.Scene;
+import ru.specialist.draw.model.objects.CompositeShape;
 
 
 public class Main {
@@ -29,6 +30,15 @@ public class Main {
         System.out.println("########### Prototype ###########");
         GraphObjectPrototypeRegistry registry = GraphObjectPrototypeRegistry.initPrototypes();
         scene.add(registry.getGraphObject("line"));
+        scene.draw();
+        scene.reset();
+
+        System.out.println("########### Composite ###########");
+        CompositeShape compositeShape = new CompositeShape();
+        compositeShape.add(bwGraphObjectFactory.createTriangle())
+                      .add(bwGraphObjectFactory.createPoint())
+                      .setColour("white");
+        scene.add(compositeShape);
         scene.draw();
     }
 }
