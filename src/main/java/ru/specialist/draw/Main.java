@@ -4,7 +4,10 @@ import ru.specialist.draw.model.GraphObjectPrototypeRegistry;
 import ru.specialist.draw.model.SceneBuilder;
 import ru.specialist.draw.model.factories.BWGraphObjectFactory;
 import ru.specialist.draw.model.Scene;
+import ru.specialist.draw.model.objects.Circle;
 import ru.specialist.draw.model.objects.CompositeShape;
+import ru.specialist.draw.model.objects.Point;
+import ru.specialist.draw.model.objects.PaintedOverDecorator;
 
 
 public class Main {
@@ -40,5 +43,10 @@ public class Main {
                       .setColour("white");
         scene.add(compositeShape);
         scene.draw();
+        scene.reset();
+
+        System.out.println("########### Decorator ###########");
+        PaintedOverDecorator circle = new PaintedOverDecorator(new Circle(new Point(3,4), 4));
+        circle.paintOver();
     }
 }
