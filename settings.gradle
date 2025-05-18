@@ -1,4 +1,4 @@
 rootProject.name = 'gof-creational-patterns'
-include 'behaviour'
+include 'behavioral'
 include 'creational_strictural'
 

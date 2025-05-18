@@ -3,7 +3,7 @@
   <component name="SonarLintProjectSettings">
     <option name="moduleMapping">
       <map>
-        <entry key="gof-creational-patterns.behavioral" value="gof-creational-patterns.behaviour" />
+        <entry key="behavioral" value="gof-creational-patterns.behaviour" />
       </map>
     </option>
   </component>
