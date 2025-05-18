@@ -1,16 +1,13 @@
 package ru.specialist.widgets;
 
-import ru.specialist.events.EventRequest;
+import ru.specialist.events.Event;
+import ru.specialist.events.EventType;
 
 import static java.lang.System.out;
 
-public class Button extends ContentControl {
+public class Button extends BaseUIElement {
 
     final static char BUTTON_FRAME = '*';
-
-    public Button() {
-        super();
-    }
 
     public Button(String text) {
         super(text);
@@ -43,9 +40,18 @@ public class Button extends ContentControl {
         return 3;
     }
 
-    public void press() {
-        out.println("Button pressed");
-        handle(new EventRequest());
+    @Override
+    public int getWidth() {
+        return getText().length() + 2;
     }
 
+    // событие
+    public void press() {
+        out.println("Button " + getText() + " pressed");
+        handleEvent(new Event(EventType.CLICK));
+    }
+
+    @Override
+    public void onEvent(Event event) {
+    }
 }
