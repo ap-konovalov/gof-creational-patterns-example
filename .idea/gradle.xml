@@ -9,6 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/behaviour" />
+            <option value="$PROJECT_DIR$/creational_strictural" />
           </set>
         </option>
       </GradleProjectSettings>
