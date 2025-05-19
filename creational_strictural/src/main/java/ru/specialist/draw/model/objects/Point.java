@@ -1,10 +1,24 @@
 package ru.specialist.draw.model.objects;
 
+import ru.specialist.draw.model.exports.ExportVisitor;
+import ru.specialist.draw.model.exports.Exportable;
 import ru.specialist.draw.model.interfaces.GraphObject;
 
 import java.util.Objects;
 
-public class Point implements Cloneable, GraphObject {
+public class Point implements Cloneable, GraphObject, Exportable {
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public String getColor() {
+        return color;
+    }
 
     private final int x;
     private final int y;
@@ -49,5 +63,10 @@ public class Point implements Cloneable, GraphObject {
     @Override
     public int hashCode() {
         return Objects.hash(x, y, color);
+    }
+
+    @Override
+    public void accept(ExportVisitor v) {
+        v.exportPoint(this);
     }
 }

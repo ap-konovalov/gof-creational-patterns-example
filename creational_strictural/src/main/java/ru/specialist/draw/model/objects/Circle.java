@@ -1,10 +1,24 @@
 package ru.specialist.draw.model.objects;
 
+import ru.specialist.draw.model.exports.ExportVisitor;
+import ru.specialist.draw.model.exports.Exportable;
 import ru.specialist.draw.model.interfaces.GraphObject;
 
 import java.util.Objects;
 
-public class Circle   implements Cloneable, GraphObject {
+public class Circle   implements Cloneable, GraphObject, Exportable {
+
+    public Point getCenter() {
+        return center;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public String getColour() {
+        return colour;
+    }
 
     private final Point center;
     private final int radius;
@@ -45,5 +59,10 @@ public class Circle   implements Cloneable, GraphObject {
     @Override
     public int hashCode() {
         return Objects.hash(center, radius, colour);
+    }
+
+    @Override
+    public void accept(ExportVisitor v) {
+        v.exportCircle(this);
     }
 }

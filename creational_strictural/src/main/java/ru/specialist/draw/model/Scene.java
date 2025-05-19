@@ -1,7 +1,11 @@
 package ru.specialist.draw.model;
 
+import ru.specialist.draw.model.exports.ExportVisitor;
+import ru.specialist.draw.model.exports.Exportable;
 import ru.specialist.draw.model.interfaces.GraphObject;
+
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 // Singleton pattern
@@ -36,5 +40,17 @@ public class Scene {
 
     public void draw() {
         graphObjects.forEach(GraphObject::draw);
+    }
+
+    public void export(ExportVisitor visitor) {
+        Iterator<GraphObject> iterator = graphObjects.iterator();
+        System.out.println("<Scene>");
+        while (iterator.hasNext()) {
+            GraphObject g = iterator.next();
+            if (g instanceof Exportable) {
+                ((Exportable) g).accept(visitor);
+            }
+        }
+        System.out.println("</Scene>");
     }
 }

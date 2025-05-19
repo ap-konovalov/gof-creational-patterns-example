@@ -2,6 +2,7 @@ package ru.specialist.draw;
 
 import ru.specialist.draw.model.GraphObjectPrototypeRegistry;
 import ru.specialist.draw.model.SceneBuilder;
+import ru.specialist.draw.model.exports.XMLExportVisitor;
 import ru.specialist.draw.model.facades.SceneFacadeImpl;
 import ru.specialist.draw.model.factories.BWGraphObjectFactory;
 import ru.specialist.draw.model.Scene;
@@ -53,5 +54,8 @@ public class Main {
         System.out.println("########### Facade ###########");
         SceneFacadeImpl sceneFacade = new SceneFacadeImpl();
         sceneFacade.drawNewScene("P 0 0", "P 3 2");
+
+        System.out.println("########### Visitor ###########");
+        Scene.getInstance().export(new XMLExportVisitor());
     }
 }
